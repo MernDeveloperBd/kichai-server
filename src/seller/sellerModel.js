@@ -3,7 +3,7 @@ const UserRoles = require("../Domain/userRole");
 const AccountStatus = require("../Domain/AccountStatus");
 
 const sellerSchema = new mongoose.Schema({
-    name: {
+    sellerName: {
         type: String,
         required: true
     },
@@ -68,7 +68,7 @@ const sellerSchema = new mongoose.Schema({
         enum: [UserRoles.SELLER],
         default: UserRoles.SELLER
     },
-    AccountStatus: {
+    accountStatus: {
         type: String,
         enum: [AccountStatus.PENDING_VERIFICATION, AccountStatus.ACTIVE, AccountStatus.SUSPENDED, AccountStatus.DEACTIVATED, AccountStatus.BANNED, AccountStatus.CLOSED],
         default: AccountStatus.PENDING_VERIFICATION
