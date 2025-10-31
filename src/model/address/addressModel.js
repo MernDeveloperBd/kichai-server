@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+const { default: mongoose } = require("mongoose");
+
 const addressSchema =new mongoose.Schema({
     address_line1:{
         type:String,
@@ -38,14 +39,17 @@ const addressSchema =new mongoose.Schema({
     type:Boolean,
     default: true
    },
-   userId:{
-    type:mongoose.Schema.ObjectId,
-    default:""
-   }
+   userId: {
+    // আগেরটা ছিল: type: mongoose.Schema.ObjectId, default: ""
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Seller",
+    default: null,  
+    required: false
+  }
 },
 {
     timestamps:true
 })
 
 const AddressModal = mongoose.model("Address", addressSchema)
-export default AddressModal;
+module.exports = AddressModal;

@@ -1,6 +1,6 @@
-const jwtProvider = require("../../utils/jwtProvider");
-const { default: AddressModal } = require("../model/address/AddressModel");
-const SellerModal = require("../seller/sellerModel");
+const jwtProvider = require("../../utils/jwtProvider.js");
+const  AddressModal  = require("../model/address/AddressModel.js");
+const SellerModal = require("../seller/sellerModel.js");
 
 class SellerService{
     // create seller
@@ -13,7 +13,7 @@ class SellerService{
         savedAddress= await AddressModal.create(sellerData.pickUpAddress)
 
         const newSeller = new SellerModal({
-            sellerName:sellerData.name,
+            sellerName:sellerData.sellerName,
             email:sellerData.email,
             password:sellerData.password,
             pickUpAddress:savedAddress._id,
@@ -31,7 +31,7 @@ class SellerService{
     }
     // get seller by email
     async getSellerByEmail(email){
-        const seller = await SellerModal.findOne({email: email})
+        const seller = await SellerModal.findOne({email})
         if(!seller){
             throw new Error("Seller not found")
         }

@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
-const UserRoles = require("../Domain/userRole");
-const AccountStatus = require("../Domain/AccountStatus");
+const UserRoles = require("../Domain/userRole.js");
+const AccountStatus = require("../Domain/AccountStatus.js");
 
 const sellerSchema = new mongoose.Schema({
     sellerName: {
@@ -76,7 +76,7 @@ const sellerSchema = new mongoose.Schema({
 }, { timestamps: true })
 
 sellerSchema.index({
-    name: 'text',
+    sellerName: 'text',
     email: 'text'
 }, {
     weights: {
