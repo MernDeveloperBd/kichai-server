@@ -32,10 +32,17 @@ const adminRoutes = require('./src/Routers/AdminRoutes.js')
 const sellerRoutes = require('./src/Routers/SellerRoutes.js')
 const authRoutes = require('./src/Routers/AuthRoutes.js')
 const userRoutes = require('./src/Routers/UserRoutes.js')
+const productRoutes = require('./src/Routers/ProductRoutes.js')
+const sellerProductsRoutes = require('./src/Routers/SellerProductsRoutes.js')
 
 app.use('/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/sellers', sellerRoutes)
+
+app.use('/products', productRoutes)
+app.use('/api/sellers/products', sellerProductsRoutes)
+
+
 app.use('/admin', adminRoutes)
 
 app.get('/', (req, res) =>

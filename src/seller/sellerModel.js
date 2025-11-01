@@ -80,7 +80,7 @@ sellerSchema.index({
     email: 'text'
 }, {
     weights: {
-        name: 5,
+        sellerName: 5,
         email: 4,
     }
 })
