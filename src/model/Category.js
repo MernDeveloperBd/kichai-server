@@ -1,7 +1,6 @@
-const  mongoose  = require("mongoose");
-const {Schema} = mongoose;
+const { default: mongoose } = require("mongoose");
 
-const categorySchema = new Schema({
+const categorySchema = new mongoose.Schema({
     name:{
         type: String
     },
@@ -11,7 +10,7 @@ const categorySchema = new Schema({
         unique: true
     },
     parentCategory:{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
         default: null
     },

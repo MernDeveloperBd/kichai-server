@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+const { Schema, default: mongoose } = require("mongoose");
 
 const cartItemSchema = new Schema({
     cart:{
@@ -9,6 +9,25 @@ const cartItemSchema = new Schema({
     product:{
         type: Schema.Types.ObjectId,
         ref: 'Product',
+        required: true
+    },
+    size:{
+        type: String
+    },
+    quantity:{
+        type: Number,
+        required: true,
+        default: 1
+    },
+    mrpPrice:{
+        type: Number,
+        required: true
+    },
+    sellingPrice:{
+        type: Number
+    },
+    userId:{
+        type: String,
         required: true
     }
 })

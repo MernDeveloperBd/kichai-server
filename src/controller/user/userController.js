@@ -15,5 +15,5 @@ const handleErrors = async (err, res) => {
 }
 
 module.exports = {
-    getUserProfileByJwt
+    getUserProfileByJwt, handleErrors
 }
