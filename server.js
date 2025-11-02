@@ -35,6 +35,8 @@ const userRoutes = require('./src/Routers/UserRoutes.js')
 const productRoutes = require('./src/Routers/ProductRoutes.js')
 const sellerProductsRoutes = require('./src/Routers/SellerProductsRoutes.js')
 const cartRoutes = require('./src/Routers/CartRoutes.js')
+const orderRoutes = require('./src/Routers/OrderRoutes.js')
+const sellerOrderRoutes = require('./src/Routers/SellerOrderRoutes.js')
 
 app.use('/auth', authRoutes)
 app.use('/api/users', userRoutes)
@@ -44,6 +46,8 @@ app.use('/products', productRoutes)
 app.use('/api/sellers/products', sellerProductsRoutes)
 
 app.use('/api/cart', cartRoutes)
+app.use('/api/orders', orderRoutes)
+app.use('/api/seller/orders', sellerOrderRoutes)
 
 
 app.use('/admin', adminRoutes)
